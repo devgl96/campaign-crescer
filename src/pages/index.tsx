@@ -1,25 +1,30 @@
-import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
-import { titleSection } from '../components/titleSection'
-import { videoDepo } from '../components/videoDepo'
+import { TitleSection } from '../components/TitleSection'
+import { VideoDepo } from '../components/VideoDepo'
 import styles from '../styles/Home.module.scss'
 
-const Home: NextPage = () => {
+export default function Home() {
   return (
     <div className={styles.container}>
-      <div className={styles.sideBar}></div>
+      <Head>
+        <title>Campanha Escola Crescer | Ajude nos</title>
+      </Head>
+      <div className={styles.sideBar}>
+        <img src="/images/logoCrescer.svg" alt="Logotipo da Escola Crescer" />
+      </div>
       <div className={styles.content}>
         <div className={styles.campaignArea}>
-          <img src="https://source.unsplash.com/random" alt="random image by unsplash" />
-          <h1>Campanha</h1>
-          <h3>A ESCOLA CRESCER NÃO PODE FECHAR</h3>
+          <img src="/images/campaignImage.svg" alt="Imagem voltado para a campanha" />
+          <div className={styles.textTitleCampaign}>
+            <h1>CAMPANHA</h1>
+            <h3>A ESCOLA CRESCER NÃO PODE FECHAR</h3>
+          </div>
         </div>
-        <titleSection />
+        <TitleSection title={"Testing..."} />
         <div className={styles.goalCampaign}>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae adipisci, at inventore et, vel culpa consectetur illum sequi sit minus exercitationem doloribus nihil placeat repellendus quo aperiam eligendi esse. Adipisci quibusdam recusandae tempore tempora inventore, optio incidunt a. A, cumque non rem mollitia eum ducimus numquam error dignissimos nobis assumenda, est dolorum qui nam adipisci voluptates doloremque veritatis reiciendis praesentium laborum possimus explicabo! Laudantium, ea impedit? Laudantium necessitatibus saepe at dolorem molestias unde tempore, reprehenderit atque praesentium non temporibus iure itaque dolor sapiente maxime in excepturi amet voluptatum quam architecto ab? Obcaecati cumque dicta totam at aspernatur perferendis nemo fuga, fugit est ut necessitatibus doloribus cum perspiciatis rem hic expedita dolorem repellendus et optio magnam tempora quo, illo corrupti dolorum! Quod et, numquam pariatur impedit dignissimos praesentium similique, omnis assumenda asperiores ex quia odio fugiat exercitationem laudantium quae. Ex aliquam consequatur placeat aut eum velit iusto nam at minus nobis.</p>
         </div>
-        <titleSection />
+        <TitleSection title={"Testing..."} />
         <div className={styles.historySchool}>
           <div className={styles.leftSide}>
             <img src="https://source.unsplash.com/random" alt="random image by unsplash" />
@@ -31,17 +36,17 @@ const Home: NextPage = () => {
           </div>
           <p>Conheça mais do nosso trabalho</p>
         </div>
-        <titleSection />
-        <div className={styles.depoSecti}>
-          <videoDepo />
-          <videoDepo />
-          <videoDepo />
-          <videoDepo />
-          <videoDepo />
-          <videoDepo />
+        <TitleSection title={"Testing..."} />
+        <div className={styles.depoSection}>
+          <VideoDepo />
+          <VideoDepo />
+          <VideoDepo />
+          <VideoDepo />
+          <VideoDepo />
+          <VideoDepo />
           <a href="#">Veja Mais</a>
         </div>
-        <div className={styles.helpSe}>
+        <div className={styles.helpSection}>
           <h3>PIX 000.000.000-00</h3>
           <button>Doe pela Nossa Vakinha</button>
         </div>
@@ -50,12 +55,13 @@ const Home: NextPage = () => {
       <div className={styles.footer}>
         <p>Compartilhe nas redes sociais</p>
         <div className={styles.socialMedias}>
-
+          <img src="/images/facebookIcon.svg" alt="Facebook" />
+          <img src="/images/twitterIcon.svg" alt="Twitter" />
+          <img src="/images/whatsappIcon.svg" alt="Whatsapp" />
+          <img src="/images/instagramIcon.svg" alt="Instagram" />
         </div>
         <p>@Crescer2022</p>
       </div>
     </div>
   )
 }
-
-export default Home
