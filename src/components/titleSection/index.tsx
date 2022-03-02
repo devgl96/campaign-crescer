@@ -1,5 +1,17 @@
-export function titleSection() {
+import React from 'react';
+
+import styles from "./styles.module.scss";
+
+interface titleSectionProps {
+  title: string;
+};
+
+export function TitleSection({title}: titleSectionProps) {
   return (
-    <h1>This is a Title</h1>
+    <div className={styles.contentTitleSection}>
+      <div className={styles.lineSideTitle}></div>
+      <h1>{title}</h1>
+      <div className={styles.lineSideTitle}></div>
+    </div>
   );
 }
