@@ -1,8 +1,11 @@
 .container {
   display: flex;
   flex-direction: row;
+  
   gap: 3rem;
 
+  background: rgba(33, 253, 81, 0.068);
+  
   .sideBar {
     display: block;
 
@@ -76,9 +79,7 @@
         align-items: center;
         justify-content: center;
 
-        gap: 1.5rem;
-
-        
+        gap: 1.5rem;     
       }
 
       .rightSide {
@@ -88,17 +89,82 @@
         justify-content: center;
 
         gap: 1.5rem;
-
-        // img {
-        //   width: 49.62rem;
-        //   height: 20.12rem;
-        // }
       }
 
+      .knowMore{
+        display: flex;
+        flex-direction: row;
+
+        gap: 1rem;
+
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        font-size: 3rem;
+
+        img {
+          width: 4.06rem;
+          height: 4.06rem;
+
+          filter: grayscale(100%);
+          transition: 0.3s filter;
+          
+          &:hover {
+            filter: grayscale(0%);
+          }
+        }
+      }
     }
 
     .depoSection {
+      width: 68.5rem;
+      height: 30rem;
 
+      position: relative;
+
+      margin: 0 0.2rem;
+
+      display: grid;
+      grid-template-columns: auto auto auto;
+
+      .seeMoreDepoSection {
+        position: absolute;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        a {
+          text-decoration: none;
+          font-family: "Poppins", sans-serif;
+          font-weight: 700;
+          font-size: 1.25rem;
+          color: var(--black-100);
+          margin: 0 1rem;
+
+          transition: 0.2s;
+
+          &:hover {
+            color: var(--green-500);
+            font-size: 1.5rem;
+          }
+        }
+
+        .circleSideSeeMore {
+          width: 0.5rem;
+          height: 0.5rem;
+
+          border-radius: 50%;
+
+          background-color: black;
+
+          margin: 0 0.3rem;
+        }
+      }
     }
 
     .helpSection {
