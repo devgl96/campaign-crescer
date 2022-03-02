@@ -1,15 +1,15 @@
 .container {
   display: flex;
   flex-direction: row;
-  
+  width: 100%;
   gap: 3rem;
 
-  background: rgba(33, 253, 81, 0.068);
-  
+  // background: rgba(33, 253, 81, 0.068);
+
   .sideBar {
     display: block;
 
-    width: 104rem;
+    width: 54rem;
     height: 100%;
 
     img {
@@ -18,7 +18,7 @@
   }
 
   .content {
-    width: 68.5rem;
+    width: 79.5rem;
 
     .campaignArea {
       display: flex;
@@ -168,13 +168,64 @@
     }
 
     .helpSection {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
 
+      h3 {
+        font-size: 3rem;
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+      }
+
+      button {
+        border: none;
+        border-radius: 10px;
+        
+        cursor: pointer;
+
+        width: 20.37rem;
+        height: 4rem;
+
+        margin: 3rem 0;
+
+        background: var(--green-500);
+        color: #FFF;
+
+        font-family: "Poppins", sans-serif;
+        font-size: 1.25rem;
+        font-weight: 700;
+
+        transition: 0.2s;
+
+        &:hover {
+          background: var(--green-900);
+        }
+      }
+    }  
+  }
+
+  .footer {  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    gap: 1rem;
+
+    p {
+      font-family: "Poppins", sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
     }
 
-    .footer {
+    .socialMedias {
+      display: flex;
+      flex-direction: row;
 
+      gap: 1rem;
     }
-
   }
 }
 

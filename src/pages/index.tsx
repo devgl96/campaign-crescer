@@ -35,9 +35,10 @@ export default function Home() {
             <img src="https://source.unsplash.com/random" alt="random image by unsplash" />
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis nam consequuntur repellendus reiciendis, commodi consectetur ipsam vitae dolor modi facilis. Quaerat saepe consectetur quam suscipit architecto eos mollitia cupiditate, incidunt numquam necessitatibus odit a neque distinctio doloremque repellat. Reiciendis, repellat. Ratione nostrum rerum atque quasi, culpa cum doloribus distinctio voluptatibus maxime sed vitae doloremque, dolorum saepe praesentium, inventore fugiat facilis dolor neque quas blanditiis! Dignissimos iste officia corporis cupiditate in cum eius aliquid recusandae blanditiis? </p>
           </div>
-          <p>Conheça mais do nosso trabalho</p>
+          <p className={styles.knowMore}>Conheça mais do nosso trabalho <a href="https://www.instagram.com/eeicrescer/" target="_blank" rel="noreferrer"><img src="/images/instagramIcon.svg" alt="Instagram" /></a></p>
         </div>
         <TitleSection title={"DEPOIMENTOS"} />
+        
         <div className={styles.depoSection}>
           <VideoDepo />
           <VideoDepo />
@@ -45,24 +46,32 @@ export default function Home() {
           <VideoDepo />
           <VideoDepo />
           <VideoDepo />
-          <a href="#">Veja Mais</a>
+          <div className={styles.seeMoreDepoSection}>
+            <div className={styles.circleSideSeeMore}></div>
+            <div className={styles.circleSideSeeMore}></div>
+            <div className={styles.circleSideSeeMore}></div>
+            <a href="#">Veja Mais</a>
+            <div className={styles.circleSideSeeMore}></div>
+            <div className={styles.circleSideSeeMore}></div>
+            <div className={styles.circleSideSeeMore}></div>
+          </div>
         </div>
         <TitleSection title={"NOS AJUDE"} />
         <div className={styles.helpSection}>
           <h3>PIX 000.000.000-00</h3>
           <button>Doe pela Nossa Vakinha</button>
         </div>
-
-      </div>
-      <div className={styles.footer}>
-        <p>Compartilhe nas redes sociais</p>
-        <div className={styles.socialMedias}>
-          <img src="/images/facebookIcon.svg" alt="Facebook" />
-          <img src="/images/twitterIcon.svg" alt="Twitter" />
-          <img src="/images/whatsappIcon.svg" alt="Whatsapp" />
-          <img src="/images/instagramIcon.svg" alt="Instagram" />
+        <TitleSection title={"COMPARTILHE"} />
+        <div className={styles.footer}>
+          <p>Divulgue esta campanha nas redes sociais</p>
+          <div className={styles.socialMedias}>
+            <a href="#" target="_blank" rel="noopener"><img src="/images/facebookIcon.svg" alt="Facebook" /></a>
+            <a href="#" target="_blank" rel="noopener"><img src="/images/twitterIcon.svg" alt="Twitter" /></a>
+            <a href="#" target="_blank" rel="noopener"><img src="/images/whatsappIcon.svg" alt="Whatsapp" /></a>
+            <a href="#" target="_blank" rel="noopener"><img src="/images/instagramIcon.svg" alt="Instagram" /></a>
+          </div>
+          <p>@Crescer2022</p>
         </div>
-        <p>@Crescer2022</p>
       </div>
     </div>
   )
