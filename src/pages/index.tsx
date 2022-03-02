@@ -20,11 +20,12 @@ export default function Home() {
             <h3>A ESCOLA CRESCER NÃO PODE FECHAR</h3>
           </div>
         </div>
-        <TitleSection title={"Testing..."} />
+        <TitleSection title={"OBJETIVO"} />
         <div className={styles.goalCampaign}>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae adipisci, at inventore et, vel culpa consectetur illum sequi sit minus exercitationem doloribus nihil placeat repellendus quo aperiam eligendi esse. Adipisci quibusdam recusandae tempore tempora inventore, optio incidunt a. A, cumque non rem mollitia eum ducimus numquam error dignissimos nobis assumenda, est dolorum qui nam adipisci voluptates doloremque veritatis reiciendis praesentium laborum possimus explicabo! Laudantium, ea impedit? Laudantium necessitatibus saepe at dolorem molestias unde tempore, reprehenderit atque praesentium non temporibus iure itaque dolor sapiente maxime in excepturi amet voluptatum quam architecto ab? Obcaecati cumque dicta totam at aspernatur perferendis nemo fuga, fugit est ut necessitatibus doloribus cum perspiciatis rem hic expedita dolorem repellendus et optio magnam tempora quo, illo corrupti dolorum! Quod et, numquam pariatur impedit dignissimos praesentium similique, omnis assumenda asperiores ex quia odio fugiat exercitationem laudantium quae. Ex aliquam consequatur placeat aut eum velit iusto nam at minus nobis.</p>
+          <img src="https://source.unsplash.com/random" alt="random image by unsplash" />
         </div>
-        <TitleSection title={"Testing..."} />
+        <TitleSection title={"HISTÓRIA"} />
         <div className={styles.historySchool}>
           <div className={styles.leftSide}>
             <img src="https://source.unsplash.com/random" alt="random image by unsplash" />
@@ -36,7 +37,7 @@ export default function Home() {
           </div>
           <p>Conheça mais do nosso trabalho</p>
         </div>
-        <TitleSection title={"Testing..."} />
+        <TitleSection title={"DEPOIMENTOS"} />
         <div className={styles.depoSection}>
           <VideoDepo />
           <VideoDepo />
@@ -46,6 +47,7 @@ export default function Home() {
           <VideoDepo />
           <a href="#">Veja Mais</a>
         </div>
+        <TitleSection title={"NOS AJUDE"} />
         <div className={styles.helpSection}>
           <h3>PIX 000.000.000-00</h3>
           <button>Doe pela Nossa Vakinha</button>

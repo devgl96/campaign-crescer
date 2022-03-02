@@ -42,16 +42,57 @@
     }
 
     .goalCampaign {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
 
+      margin: 0 1rem;
+
+      gap: 1.5rem;
+
+      img {
+        width: 49.62rem;
+        height: 20.12rem;
+      }
     }
 
     .historySchool {
-      .leftSide {
+      width: 68.5rem;
+      display: flex;
+      flex-direction: column;
 
+      margin: 0 1rem;
+      gap: 2rem;
+
+      img {
+        width: 49.62rem;
+        height: 20.12rem;
+      }
+
+      .leftSide {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        gap: 1.5rem;
+
+        
       }
 
       .rightSide {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: center;
 
+        gap: 1.5rem;
+
+        // img {
+        //   width: 49.62rem;
+        //   height: 20.12rem;
+        // }
       }
 
     }
