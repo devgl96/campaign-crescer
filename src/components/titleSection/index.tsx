@@ -6,7 +6,7 @@ interface titleSectionProps {
   title: string;
 };
 
-export function TitleSection({title}: titleSectionProps) {
+export default function TitleSection({title}: titleSectionProps) {
   return (
     <div className={styles.contentTitleSection}>
       <div className={styles.lineSideTitle}></div>

@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import { TitleSection } from "../components/TitleSection";
-import { VideoDepo } from '../components/VideoDepo';
+import TitleSection  from "../components/TitleSection";
+import VideoDepo  from '../components/VideoDepo';
 import styles from '../styles/Home.module.scss'
 
 export default function Home() {
