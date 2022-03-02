@@ -1,7 +1,10 @@
-export function videoDepo() {
+import styles from "./styles.module.scss";
+
+export function VideoDepo() {
   return (
-    <video width="326" height="160" controls>
-      <source src="https://www.youtube.com/watch?v=GHTA143_b-s" type="video/mpeg" />
-    </video>
-  )
+    <div className={styles.videoContent}>
+      <iframe width="326" height="160" src="https://www.youtube.com/embed/6fNy0iD3hsk?controls=0">
+      </iframe>
+    </div>
+  );
 }
