@@ -117,7 +117,8 @@
 
     .depoSection {
       width: 68.5rem;
-      height: 30rem;
+      min-height: 30rem;
+      height: auto;
 
       position: relative;
 
@@ -133,18 +134,23 @@
         flex-direction: row;
         align-items: center;
         justify-content: center;
-
+        
         bottom: 0;
         left: 0;
         right: 0;
 
-        a {
+        button {
+          background: none;
+          border: none;
+
           text-decoration: none;
           font-family: "Poppins", sans-serif;
           font-weight: 700;
           font-size: 1.25rem;
           color: var(--black-100);
           margin: 0 1rem;
+
+          cursor: pointer;
 
           transition: 0.2s;
 

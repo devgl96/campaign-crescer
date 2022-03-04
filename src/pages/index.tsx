@@ -1,9 +1,42 @@
+import { GetServerSideProps } from 'next';
 import Head from 'next/head'
+import { useEffect, useState } from 'react';
 import TitleSection  from "../components/TitleSection";
 import VideoDepo  from '../components/VideoDepo';
 import styles from '../styles/Home.module.scss'
 
-export default function Home() {
+interface VideoInfo {
+  videoId: string;
+};
+
+interface HomeProps {
+  data: {
+    items: [
+      {
+        snippet: { 
+          resourceId: VideoInfo;
+        }
+      }
+    ]
+  };
+};
+
+export default function Home({data}: HomeProps) {
+  const [videos, setVideos] = useState<VideoInfo[]>([]);
+  const [seeMore, setSeeMore] = useState(false);
+
+  useEffect(() => {
+    const videosInfoByData = data.items.map(video => ({
+      videoId: video.snippet.resourceId.videoId
+    }));
+
+    setVideos(videosInfoByData);
+  }, []);
+
+  function handleSeeMore() {
+    setSeeMore(true);
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -40,21 +73,29 @@ export default function Home() {
         <TitleSection title={"DEPOIMENTOS"} />
         
         <div className={styles.depoSection}>
-          <VideoDepo />
-          <VideoDepo />
-          <VideoDepo />
-          <VideoDepo />
-          <VideoDepo />
-          <VideoDepo />
-          <div className={styles.seeMoreDepoSection}>
-            <div className={styles.circleSideSeeMore}></div>
-            <div className={styles.circleSideSeeMore}></div>
-            <div className={styles.circleSideSeeMore}></div>
-            <a href="#">Veja Mais</a>
-            <div className={styles.circleSideSeeMore}></div>
-            <div className={styles.circleSideSeeMore}></div>
-            <div className={styles.circleSideSeeMore}></div>
-          </div>
+          {videos.map((video, index) => {
+            if(!seeMore && index <= 5){
+              console.log("Index: ", index);
+              return(
+                <VideoDepo key={video.videoId} embedVideoId={video.videoId}/>
+              );
+            } else if(seeMore){
+              return(
+                <VideoDepo key={video.videoId} embedVideoId={video.videoId}/>
+              );
+            }
+          })}
+          {!seeMore && 
+            <div className={styles.seeMoreDepoSection}>
+              <div className={styles.circleSideSeeMore}></div>
+              <div className={styles.circleSideSeeMore}></div>
+              <div className={styles.circleSideSeeMore}></div>
+              <button onClick={handleSeeMore}>Veja Mais</button>
+              <div className={styles.circleSideSeeMore}></div>
+              <div className={styles.circleSideSeeMore}></div>
+              <div className={styles.circleSideSeeMore}></div>
+            </div>
+          }
         </div>
         <TitleSection title={"NOS AJUDE"} />
         <div className={styles.helpSection}>
@@ -75,4 +116,16 @@ export default function Home() {
       </div>
     </div>
   )
+}
+
+// https://www.freecodecamp.org/news/how-to-add-a-youtube-playlist-to-a-nextjs-react-app-with-the-youtube-api/
+export const getServerSideProps: GetServerSideProps = async () => {
+  const responseYoutube = await fetch(`${process.env.YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&maxResults=50&playlistId=${process.env.PLAYLIST_ID}&key=${process.env.API_KEY_GOOGLE_YOUTUBE}`);
+  
+  const data = await responseYoutube.json();
+  
+  return {
+    props: {data},
+  }
+  
 }
