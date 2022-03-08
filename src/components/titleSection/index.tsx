@@ -10,7 +10,7 @@ export default function TitleSection({title}: titleSectionProps) {
   return (
     <div className={styles.contentTitleSection}>
       <div className={styles.lineSideTitle}></div>
-      <h1>{title}</h1>
+        <h1>{title}</h1>
       <div className={styles.lineSideTitle}></div>
     </div>
   );
