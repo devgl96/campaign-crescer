@@ -3,7 +3,23 @@ import Head from 'next/head'
 import { useEffect, useState } from 'react';
 import TitleSection  from "../components/TitleSection";
 import VideoDepo  from '../components/VideoDepo';
-import styles from '../styles/Home.module.scss'
+
+import {
+  EmailShareButton,
+  FacebookShareButton, 
+  LinkedinShareButton,
+  TelegramShareButton, 
+  TwitterShareButton,
+  WhatsappShareButton, 
+} from "react-share";
+
+import {
+  EmailIcon, 
+  LinkedinIcon,
+  TelegramIcon
+} from "react-share";
+
+import styles from '../styles/Home.module.scss';
 
 interface VideoInfo {
   videoId: string;
@@ -106,10 +122,54 @@ export default function Home({data}: HomeProps) {
         <div className={styles.footer}>
           <p>Divulgue esta campanha nas redes sociais</p>
           <div className={styles.socialMedias}>
-            <a href="#" target="_blank" rel="noopener"><img src="/images/facebookIcon.svg" alt="Facebook" /></a>
-            <a href="#" target="_blank" rel="noopener"><img src="/images/twitterIcon.svg" alt="Twitter" /></a>
-            <a href="#" target="_blank" rel="noopener"><img src="/images/whatsappIcon.svg" alt="Whatsapp" /></a>
-            <a href="#" target="_blank" rel="noopener"><img src="/images/instagramIcon.svg" alt="Instagram" /></a>
+            <FacebookShareButton 
+              url={"https://www.instagram.com/"}
+              quote={"Ajude a Escola Crescer! Precisamos de toda a ajuda possível para que a nossa escola não feche as portas."}
+              hashtag={"#escolaCrescer, #campanhaEscolaCrescer, #ajudeEscolaCrescer"}
+            >
+              <img src="/images/facebookIcon.svg" alt="Facebook" />
+            </FacebookShareButton>
+
+            <TwitterShareButton
+              url={"https://www.instagram.com/"}
+              title="Ajude a Escola Crescer! Precisamos de toda a ajuda possível para que a nossa escola não feche as portas."
+              hashtags={["escolaCrescer", "campanhaEscolaCrescer", "ajudeEscolaCrescer"]}
+            >
+              <img src="/images/twitterIcon.svg" alt="Twitter" />
+            </TwitterShareButton>
+
+            <WhatsappShareButton
+              url="https://www.instagram.com/"
+              title="Ajude a Escola Crescer! Precisamos de toda a ajuda possível para que a nossa escola não feche as portas."
+            >
+              <img src="/images/whatsappIcon.svg" alt="Whatsapp" />
+            </WhatsappShareButton>
+
+            {/* With Problem */}
+            <LinkedinShareButton
+              url="http://google.com/"
+              title="Ajude a Escola Crescer!"
+              summary="Precisamos de toda a ajuda possível para que a nossa escola não feche as portas."
+              source="Ajuda voltada para a Escola de Educação Infantil Crescer"
+            >
+              <LinkedinIcon size="40" borderRadius={50}/>
+            </LinkedinShareButton>
+
+            <TelegramShareButton
+              url="http://google.com/"
+              title="Ajude a Escola Crescer! Precisamos de toda a ajuda possível para que a nossa escola não feche as portas."
+            >
+              <TelegramIcon size="40" borderRadius={50} />
+            </TelegramShareButton>
+
+            <EmailShareButton
+              url="http://google.com/"
+              subject="Ajude a Escola Crescer!"
+              body="Precisamos de toda a ajuda possível para que a nossa escola não feche as portas."
+            >
+              <EmailIcon size="40" borderRadius={50} />    
+            </EmailShareButton>
+
           </div>
           <p>@Crescer2022</p>
         </div>
