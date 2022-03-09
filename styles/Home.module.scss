@@ -6,6 +6,16 @@
 
   // background: rgba(33, 253, 81, 0.068);
 
+  p {
+    line-height: 1.7rem;
+    text-indent: 30px;
+
+    &:first-child {
+      font-size: 1.3rem;
+      line-height: 2rem;
+    }
+  }
+
   .sideBar {
     display: block;
 
@@ -100,6 +110,8 @@
         font-family: "Poppins", sans-serif;
         font-weight: 700;
         font-size: 3rem;
+
+        line-height: normal;
 
         img {
           width: 4.06rem;
@@ -231,6 +243,16 @@
       flex-direction: row;
 
       gap: 1rem;
+
+      transition: 0.2 filter;
+
+      button {
+        filter: brightness(0.7);
+      }
+
+      button:hover {
+        filter: brightness(1);
+      }
     }
   }
 }
