@@ -1,4 +1,4 @@
-import type { NextPage } from 'next'
+import type { GetServerSideProps } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 
@@ -42,16 +42,16 @@ interface HomeProps {
   };
 };
 
-const Home: NextPage = () => {
+const Home = ({data}: HomeProps) => {
   const [videos, setVideos] = useState<VideoInfo[]>([]);
   const [seeMore, setSeeMore] = useState(false);
 
   useEffect(() => {
-    // const videosInfoByData = data.items.map(video => ({
-    //   videoId: video.snippet.resourceId.videoId
-    // }));
+    const videosInfoByData = data.items.map(video => ({
+      videoId: video.snippet.resourceId.videoId
+    }));
 
-    // setVideos(videosInfoByData);
+    setVideos(videosInfoByData);
   }, [videos]);
 
   function handleSeeMore() {
@@ -229,6 +229,17 @@ const Home: NextPage = () => {
       </div>
     </div>
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  // const responseYoutube = await fetch(`${process.env.YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&maxResults=50&playlistId=${process.env.PLAYLIST_ID}&key=${process.env.API_KEY_GOOGLE_YOUTUBE}`);
+  const responseYoutube = await fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=PLjq6DwYksrzz_fsWIpPcf6V7p2RNAneKc&key=AIzaSyCfwHM4mgdo_fRhn2SV2ZYD-kizA5raBJA`);
+  
+  const data = await responseYoutube.json();
+  
+  return {
+    props: {data},
+  } 
 }
 
 export default Home
