@@ -1,0 +1,280 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 3rem;
+
+  // background: rgba(33, 253, 81, 0.068);
+
+  p {
+    line-height: 1.7rem;
+    text-indent: 30px;
+
+    &:first-child {
+      font-size: 1.3rem;
+      line-height: 2rem;
+    }
+  }
+
+  .sideBar {
+    display: block;
+
+    width: 18%;
+    height: 100%;
+
+    .imageSideBar {
+      width: 250px;
+      height: 200px;
+      position: fixed;
+    }
+  }
+
+  .content {
+    width: 79.5rem;
+
+    .campaignArea {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .textTitleCampaign {
+        text-align: center;
+
+        h1 {
+          font-family: "Poppins", sans-serif;
+          font-size: 6rem;
+          font-weight: 700;
+          color: var(--green-900);
+        }
+
+        h3 {
+          font-family: "Roboto", sans-serif;
+          font-size: 3rem;
+          font-weight: 300;
+          color: var(--green-500);
+        }
+      }
+    }
+
+    .goalCampaign {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      margin: 0 1rem;
+
+      gap: 1.5rem;
+
+      img {
+        width: 49.62rem;
+        height: 20.12rem;
+      }
+    }
+
+    .historySchool {
+      width: 68.5rem;
+      display: flex;
+      flex-direction: column;
+
+      margin: 0 1rem;
+      gap: 2rem;
+
+      img {
+        width: 49.62rem;
+        height: 20.12rem;
+      }
+
+      .leftSide {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        gap: 1.5rem;     
+      }
+
+      .rightSide {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: center;
+
+        gap: 1.5rem;
+      }
+
+      .knowMore{
+        display: flex;
+        flex-direction: row;
+
+        gap: 1rem;
+
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+        font-size: 3rem;
+
+        line-height: normal;
+
+        img {
+          width: 4.7rem;
+          height: 4.7rem;
+
+          filter: grayscale(100%);
+          transition: 0.3s filter;
+          
+          &:hover {
+            filter: grayscale(0%);
+          }
+        }
+
+        svg {
+          margin-top: 0.3rem;
+          filter: grayscale(100%);
+          transition: 0.3s filter;
+          
+          &:hover {
+            filter: grayscale(0%);
+          }
+        }
+      }
+    }
+
+    .depoSection {
+      width: 68.5rem;
+      min-height: 33rem;
+      height: auto;
+
+      position: relative;
+
+      margin: 0 0.2rem;
+
+      display: grid;
+      grid-template-columns: auto auto auto;
+
+      .seeMoreDepoSection {
+        position: absolute;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        
+        bottom: 0;
+        left: 7rem;
+        right: 0;
+
+        button {
+          background: none;
+          border: none;
+
+          text-decoration: none;
+          font-family: "Poppins", sans-serif;
+          font-weight: 700;
+          font-size: 1.7rem;
+          color: var(--black-100);
+          margin: 0 1rem;
+
+          cursor: pointer;
+
+          transition: 0.2s;
+
+          &:hover {
+            color: var(--green-500);
+            font-size: 1.8rem;
+          }
+        }
+
+        .circleSideSeeMore {
+          width: 0.5rem;
+          height: 0.5rem;
+
+          border-radius: 50%;
+
+          background-color: black;
+
+          margin: 0 0.3rem;
+        }
+      }
+    }
+
+    .helpSection {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      h3 {
+        font-size: 3rem;
+        font-family: "Poppins", sans-serif;
+        font-weight: 700;
+      }
+
+      button {
+        border: none;
+        border-radius: 10px;
+        
+        cursor: pointer;
+
+        width: 20.37rem;
+        height: 4rem;
+
+        margin: 3rem 0;
+
+        background: var(--green-500);
+        color: #FFF;
+
+        font-family: "Poppins", sans-serif;
+        font-size: 1.25rem;
+        font-weight: 700;
+
+        transition: 0.2s;
+
+        &:hover {
+          background: var(--green-900);
+        }
+      }
+    }  
+  }
+
+  .footer {  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    gap: 1rem;
+
+    margin-bottom: 1rem;
+
+    p {
+      font-family: "Poppins", sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .socialMedias {
+      display: flex;
+      flex-direction: row;
+
+      gap: 1rem;
+
+      transition: 0.2 filter;
+
+      button {
+        filter: brightness(0.7);
+      }
+
+      button:hover {
+        filter: brightness(1);
+      }
+    }
+  }
+}
+
+
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+}
