@@ -50,11 +50,16 @@ const Home = ({data}: HomeProps) => {
   const [copyText, setCopyText] = useState(false);
 
   useEffect(() => {
-    const videosInfoByData = data.items.map(video => ({
-      videoId: video.snippet.resourceId.videoId
-    }));
+    if(data.items.length > 0) {
+      const videosInfoByData = data.items.map(video => ({
+        videoId: video.snippet.resourceId.videoId
+      }));
+  
+      setVideos(videosInfoByData);
+    } else {
+      setVideos([]);
+    }
 
-    setVideos(videosInfoByData);
   }, [videos]);
 
   function handleSeeMore() {
@@ -78,7 +83,6 @@ const Home = ({data}: HomeProps) => {
             layout="responsive"
             width="275px"
             height="700px"
-            // className={styles.imageSideBar}
           />
         </div>
       </div>
@@ -146,9 +150,8 @@ const Home = ({data}: HomeProps) => {
         <TitleSection title={"DEPOIMENTOS"} />
         
         <div className={styles.depoSection}>
-          {videos.map((video, index) => {
+          {videos.length > 0 ? videos.map((video, index) => {
             if(!seeMore && index <= 5){
-              console.log("Index: ", index);
               return(
                 <VideoDepo key={video.videoId} embedVideoId={video.videoId}/>
               );
@@ -157,8 +160,13 @@ const Home = ({data}: HomeProps) => {
                 <VideoDepo key={video.videoId} embedVideoId={video.videoId}/>
               );
             }
-          })}
-          {!seeMore && 
+          })
+            :
+            (
+              <h1>Sem depoimentos no momento!</h1>
+            )
+          }
+          {!seeMore && videos.length > 6 && 
             <div className={styles.seeMoreDepoSection}>
               <div className={styles.circleSideSeeMore}></div>
               <div className={styles.circleSideSeeMore}></div>
