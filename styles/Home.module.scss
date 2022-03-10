@@ -66,6 +66,8 @@
 
       gap: 1.5rem;
 
+      text-align: justify;
+
       img {
         width: 49.62rem;
         height: 20.12rem;
@@ -80,6 +82,7 @@
       margin: 0 1rem;
       gap: 2rem;
 
+      text-align: justify;
       img {
         width: 49.62rem;
         height: 20.12rem;
@@ -103,7 +106,7 @@
         gap: 1.5rem;
       }
 
-      .knowMore{
+      .knowMore {
         display: flex;
         flex-direction: row;
 
@@ -163,7 +166,6 @@
         margin-top: 1rem;
 
         font-size: 2.5rem;
-        
       }
 
       .seeMoreDepoSection {
@@ -312,9 +314,128 @@
 }
 
 
-@media (max-width: 600px) {
-  .grid {
+@media only screen and (max-width: 768px) {
+  .container {
     width: 100%;
-    flex-direction: column;
+    margin: 0rem 7rem 0rem 1rem;
+
+    .sideBar {
+      display: none;
+      position: absolute;
+    }
+
+    .content {
+      width: 70.5rem;  
+
+      .campaignArea {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .goalCampaign {
+        flex-direction: column-reverse;
+
+        text-align: justify;
+        img {
+          width: 100%;
+        }
+      }
+
+      .historySchool {
+        .leftSide {
+          flex-direction: column;
+          img {
+            width: 100%;
+          }
+        }
+
+        .rightSide {
+          flex-direction: column;
+
+          img {
+            width: 100%;
+          }
+        }
+
+        .knowMore {
+          flex-direction: row;
+          
+          img {
+            filter: grayscale(0%);
+          }
+        }
+      }
+
+      .depoSection {
+        width: 100%;
+
+        grid-template-columns: auto;
+
+        justify-content: center;
+
+        h1 {
+          width: 100%;
+
+          font-size: 3rem;
+        }
+
+        iframe {
+          width: 60rem;
+          height: 30rem;
+
+          margin-bottom: 0.5rem;
+        }
+      
+        .seeMoreDepoSection {
+          bottom: -2rem;
+          left: 0;
+
+          button {
+            font-size: 2.5rem;
+          }
+
+          .circleSideSeeMore {
+            width: 0.9rem;
+            height: 0.9rem;
+          }
+        }      
+      }
+
+      .helpSection {
+        button {
+          width: 40.37rem;
+          height: 8rem;
+
+          font-size: 2.5rem;
+        }
+
+        h3 {
+          .copyText {
+            font-size: 2.2rem;
+            font-weight: bold;
+          }
+        }
+      }
+
+      .footer {  
+        p {
+          font-size: 2.5rem;
+        }
+
+        .socialMedias {
+          margin: 2rem 0;
+          
+          button {
+            filter: brightness(1);
+
+            svg {
+              width: 60px;
+              height: 60px;
+            }
+          }
+        }
+      }
+
+    }
   }
 }

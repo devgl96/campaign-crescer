@@ -51,16 +51,20 @@ const Home = ({data}: HomeProps) => {
 
   useEffect(() => {
     if(data.items.length > 0) {
-      const videosInfoByData = data.items.map(video => ({
-        videoId: video.snippet.resourceId.videoId
-      }));
-  
-      setVideos(videosInfoByData);
+      getVideosByYoutube();
     } else {
       setVideos([]);
     }
 
   }, [videos]);
+
+  function getVideosByYoutube() {
+    const videosInfoByData = data.items.map(video => ({
+      videoId: video.snippet.resourceId.videoId
+    }));
+
+    setVideos(videosInfoByData);
+  }
 
   function handleSeeMore() {
     setSeeMore(true);
