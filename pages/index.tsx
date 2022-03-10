@@ -7,6 +7,8 @@ import VideoDepo from '../components/VideoDepo';
 
 import styles from '../styles/Home.module.scss';
 
+import { FiClipboard } from "react-icons/fi";
+
 import { 
   EmailIcon, 
   FacebookIcon, 
@@ -45,6 +47,7 @@ interface HomeProps {
 const Home = ({data}: HomeProps) => {
   const [videos, setVideos] = useState<VideoInfo[]>([]);
   const [seeMore, setSeeMore] = useState(false);
+  const [copyText, setCopyText] = useState(false);
 
   useEffect(() => {
     const videosInfoByData = data.items.map(video => ({
@@ -56,6 +59,11 @@ const Home = ({data}: HomeProps) => {
 
   function handleSeeMore() {
     setSeeMore(true);
+  }
+
+  function copyPIX() {
+    setCopyText(true);
+    navigator.clipboard.writeText("2710047@vakinha.com.br");
   }
 
   return (
@@ -164,7 +172,11 @@ const Home = ({data}: HomeProps) => {
         </div>
         <TitleSection title={"NOS AJUDE"} />
         <div className={styles.helpSection}>
-          <h3>PIX 000.000.000-00</h3>
+          <h3>
+            PIX 2710047@vakinha.com.br 
+            <FiClipboard size={45} onClick={copyPIX}/>
+            <h6 className={styles.copyText}>{copyText ? "Copiado!" : ""}</h6>
+          </h3>
           <a href={"http://vaka.me/2710047"} target={"_blank"} rel="noreferrer">
             <button>
                 Doe pela Nossa Vakinha
@@ -232,7 +244,6 @@ const Home = ({data}: HomeProps) => {
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  // const responseYoutube = await fetch(`${process.env.YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&maxResults=50&playlistId=${process.env.PLAYLIST_ID}&key=${process.env.API_KEY_GOOGLE_YOUTUBE}`);
   const responseYoutube = await fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${process.env.PLAYLIST_ID_YOUTUBE}&key=${process.env.KEY_API_YOUTUBE}`);
   
   const data = await responseYoutube.json();
