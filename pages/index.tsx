@@ -233,7 +233,7 @@ const Home = ({data}: HomeProps) => {
 
 export const getServerSideProps: GetServerSideProps = async () => {
   // const responseYoutube = await fetch(`${process.env.YOUTUBE_PLAYLIST_ITEMS_API}?part=snippet&maxResults=50&playlistId=${process.env.PLAYLIST_ID}&key=${process.env.API_KEY_GOOGLE_YOUTUBE}`);
-  const responseYoutube = await fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=PLjq6DwYksrzz_fsWIpPcf6V7p2RNAneKc&key=${process.env.KEY_API_YOUTUBE}`);
+  const responseYoutube = await fetch(`https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${process.env.PLAYLIST_ID_YOUTUBE}&key=${process.env.KEY_API_YOUTUBE}`);
   
   const data = await responseYoutube.json();
   
