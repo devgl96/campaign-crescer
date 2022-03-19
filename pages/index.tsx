@@ -110,12 +110,12 @@ const Home = ({data}: HomeProps) => {
             Somos uma escola dedicada e compromissada com a educação de nossas crianças; durante vários anos temos procurado dar o melhor do que está ao nosso alcance, para que os nossos pequenos aprenda a dar os seus primeiros passos na vida através de um ensino sadio no caráter e no convívio com a sociedade; porque sabemos que é nos primeiros anos de vida do indivíduo que é formada a sua personalidade. Porém mesmo sendo uma das escolas de referência no ensino infantil em nossa cidade, temos tido uma grande necessidade para
             mantermos nossa escola funcionando; a necessidade urgente de uma sede própria.
           </p>
-          <img src="https://source.unsplash.com/random" alt="random image by unsplash" />
+          <img src="/images/sonhoSedePropria.png" alt="Sonho sede própria da Escola Crescer" />
         </div>
         <TitleSection title={"HISTÓRIA"} />
         <div className={styles.historySchool}>
           <div className={styles.leftSide}>
-            <img src="https://source.unsplash.com/random" alt="random image by unsplash" />
+            <img src="/images/fotoAntigaEscolaCrescer1996.png" alt="Foto da turma de 1996 da escola em frente ao primeiro lugar da escola que foi na Igreja Presbiteriana do Brasil" />
             <p>
               A nossa escola nasceu da ideia de mães que queriam um ensino de qualidade e com um valor de mensalidade que fosse accessível. Essas mães em sua grande maioria, pertenciam a Igreja Presbiteriana do Brasil, localizada à rua Castro Alves, nº 73, Camacã - Bahia.<br />
 
@@ -125,7 +125,7 @@ const Home = ({data}: HomeProps) => {
             </p>
           </div>
           <div className={styles.rightSide}>
-            <img src="https://source.unsplash.com/random" alt="random image by unsplash" />
+            <img src="/images/fotoAntigaEscolaCrescer2008.png" alt="Foto da turma de 2008 da escola em frente ao segundo lugar da escola que foi na rua Castro Alves. " />
             <p>
               Com a ajuda de Deus e muita luta, já conseguimos comprar um terreno, mas devido às grandes
               dificuldades financeiras em que temos vivido não só no nosso país, mas no mundo inteiro,
